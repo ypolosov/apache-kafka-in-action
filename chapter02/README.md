@@ -23,7 +23,7 @@ echo "coffee pads 10" | kafka-console-producer.sh \
     --bootstrap-server localhost:9092
 ```
 
-If you don't use the `echo` and `|` (pipe) command. You can publish message to the topic interactively
+If you don't use the `echo` and `|` (pipe) command. You can publish messages to the topic interactively
 
 ```sh
 kafka-console-producer.sh \
