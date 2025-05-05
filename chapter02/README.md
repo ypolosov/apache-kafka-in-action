@@ -50,4 +50,10 @@ kafka-console-consumer.sh \
 
 ## Kafka UI (Kafbat)
 
+Optionally we could use kafka-ui (e.g. Kafbat) to have a GUI for kafka.
 
+```sh
+docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true ghcr.io/kafbat/kafka-ui
+```
+
+To connect to our local kafka cluster make sure to use `host.docker.internal` as your host because kafbat is running on a docker container while our kafka is running on our localhost.
