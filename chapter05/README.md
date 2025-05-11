@@ -1,5 +1,9 @@
 # Chapter 5
 
+## UNCATEGORIZED
+
+* `min.insync.replicas` will affect not only the sending of ack from broker to producer but it will also affect the ability of consumer to read messages from a broker (or partition). If `min.insync.replicas=2` then consumers would not be able to read to the topic if the minimum ISRs are not met. I.e. The message within a partition has not been replicated to enough replicas.
+
 ## ACKs Strategies in Kafka
 
 ACKs strategies refers to the number of replicas that must be in-sync with the leader. More ACKs means more time for data to be distributed across replica hence # of ACKs and performance are usually inversely proportional. I.e. Less ACKs will result in more performance.
