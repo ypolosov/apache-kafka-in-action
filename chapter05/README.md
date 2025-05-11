@@ -102,4 +102,9 @@ kafka-leader-election.sh \
     --election-type=preferred \
     --all-topic-partitions \
     --bootstrap-server localhost:9092
+
+Successfully completed preferred leader election for partitions
+products.prices.changelog.replication-3-1
 ```
+
+The command output (products.prices.changelog.replication-3-1) indicates the partitions and topics where the preferred leader election was executed. Each parti- tion number is hyphenated with its corresponding topic.
