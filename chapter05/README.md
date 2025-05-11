@@ -91,7 +91,7 @@ Notice that ...
 > [!NOTE]
 > TIP: It is strongly recommend keeping idempotence enabled. If you encounter performance problems, they likely aren’t caused by idempotence, so address those problems first.
 
-When __exactly once__ delivery is used, producer need to send messages to topics with a sequence id. Consequently the sequence id also brings another benefit. **It ensures that all messages within a partition will be guaranteed to be in the correct order**.
+When *exactly once* delivery is used, producer need to send messages to topics with a sequence id. Consequently the sequence id also brings another benefit. **It ensures that all messages within a partition will be guaranteed to be in the correct order**.
 
 ## Partition Leader Election
 
