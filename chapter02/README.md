@@ -57,3 +57,11 @@ docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true ghcr.io/kafbat/kafka-
 ```
 
 To connect to our local kafka cluster make sure to use `host.docker.internal` as your host because kafbat is running on a docker container while our kafka is running on our localhost.
+
+``` sh
+docker run -it -p 8080:8080 \
+    -e DYNAMIC_CONFIG_ENABLED=true \
+    -e KAFKA_CLUSTERS_0_NAME=local \
+    -e KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=host.docker.internal:9092,host.docker.internal:9093,host.docker.internal:9094 \
+    ghcr.io/kafbat/kafka-ui
+```
