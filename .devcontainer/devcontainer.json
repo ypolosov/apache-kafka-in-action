@@ -26,6 +26,11 @@
 			"source": "kafka",
 			"target": "/home/vscode/kafka",
 			"type": "volume"
+		},
+		{
+			"source": "docker-in-docker",
+			"target": "/var/lib/docker",
+			"type": "volume"
 		}
 	],
 
