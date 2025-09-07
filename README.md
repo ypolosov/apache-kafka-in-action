@@ -56,35 +56,16 @@ controller.listener.names=CONTROLLER
 listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
 ```
 
+``` sh
+cp ./configs/kafka1.properties ~/kafka/config/kafka1.properties
+cp ./configs/kafka2.properties ~/kafka/config/kafka2.properties
+cp ./configs/kafka3.properties ~/kafka/config/kafka3.properties
+```
+
 Notice the `log.dirs` in each kafka properties. We need to create the directory so each broker could store their data.
 
 ```sh
 mkdir -p ~/kafka/data/kafka1 ~/kafka/data/kafka2 ~/kafka/data/kafka3
-```
-
-Once the data directories are created, run the following command sequentially
-
-```sh
-export KAFKA_CLUSTER_ID="$(kafka-storage.sh random-uuid)"
-
-kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c ~/kafka/config/kafka1.properties
-kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c ~/kafka/config/kafka2.properties
-kafka-storage.sh format -t $KAFKA_CLUSTER_ID -c ~/kafka/config/kafka3.properties
-```
-
-If you get the following error while running `kafka-storage.sh random-uuid`
-
-```sh
-Error: VM option 'UseG1GC' is experimental and must be enabled via -XX:+UnlockExperimentalVMOptions.
-Error: Could not create the Java Virtual Machine.
-Error: A fatal exception has occurred. Program will exit.
-```
-
-then you could open `~/kafka/bin/kafka-run-class.sh`. Locate `KAFKA_HEAP_OPTS` and `KAFKA_JVM_PERFORMANCE_OPTS` and then add the `-XX:+UnlockExperimentalVMOptions` option.
-
-```sh
-export KAFKA_HEAP_OPTS="-XX:+UnlockExperimentalVMOptions ..."
-export KAFKA_JVM_PERFORMANCE_OPTS="... -XX:+UnlockExperimentalVMOptions ..."
 ```
 
 ### Starting/Stopping Kafka
