@@ -19,14 +19,13 @@
 			"target": "/home/vscode/kafka",
 			"type": "volume"
 		}
-	]
+	],
 
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "echo 'export PATH=\"/home/vscode/kafka/bin:$PATH\"' >> ~/.bashrc"
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "java -version",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
