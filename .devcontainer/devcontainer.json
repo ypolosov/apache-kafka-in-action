@@ -1,19 +1,27 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/java
 {
-	"name": "Java",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+	"name": "Apache-Kafka-in-Action",
+	"build": {
+		"context": "..",
+		"dockerfile": "./Dockerfile.devcontainer"
+	},
 
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
 			"version": "none",
 			"installMaven": "false",
 			"installGradle": "false"
-		}
+		},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
 
 	"mounts": [
+		{
+			"source": "bashhistory",
+			"target": "/commandhistory",
+			"type": "volume"
+		},
 		{
 			"source": "kafka",
 			"target": "/home/vscode/kafka",
